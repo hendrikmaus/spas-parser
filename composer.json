@@ -1,6 +1,6 @@
 {
     "name": "hmaus/spas-parser",
-    "description": "Common interfaces for spas parsers and adapters",
+    "description": "Common interfaces for spas parsers",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -11,7 +11,8 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "php": ">=5.6"
+        "php": ">=5.6",
+        "symfony/http-foundation": "^3.1"
     },
     "autoload": {
         "psr-4": {
