@@ -1,7 +1,7 @@
 {
     "name": "hmaus/spas-parser",
     "description": "Common interfaces for spas parsers and adapters",
-    "type": "metapackage",
+    "type": "library",
     "license": "MIT",
     "authors": [
         {
