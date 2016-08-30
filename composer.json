@@ -1,0 +1,14 @@
+{
+    "name": "hmaus/spas-parser",
+    "description": "Common interfaces for spas parsers and adapters",
+    "type": "metapackage",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hendrik Maus",
+            "email": "aidentailor@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
