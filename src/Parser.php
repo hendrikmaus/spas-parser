@@ -3,7 +3,7 @@
  * Implement this interface to create a concrete API description parser
  */
 
-namespace Hmaus\SpasParser;
+namespace Hmaus\Spas\Parser;
 
 interface Parser
 {

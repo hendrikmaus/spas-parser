@@ -3,7 +3,7 @@
  * Used by spas to fire requests
  */
 
-namespace Hmaus\SpasParser;
+namespace Hmaus\Spas\Parser;
 
 use Symfony\Component\HttpFoundation\HeaderBag;
 use Symfony\Component\HttpFoundation\ParameterBag;
