@@ -22,8 +22,9 @@ composer require hmaus/spas-parser
 
 - Start a new composer library
 - Implement the `Parser` interface
-- To keep things aligned, name your implementation `<Language>ParsedRequestsProvider`, e.g. `ApibParsedRequestsProvider`
-- The namespace is up to you, I suggest `<Yourname>\Spas\Parser\<Language>`, e.g. `Hmaus\Spas\Parser\Apib`
+- To keep things aligned, name your implementation `<Language>`, e.g. `Apib`
+- The namespace is up to you, I suggest `<Yourname>\Spas\Parser`, e.g. `Hmaus\Spas\Parser`
+  So you end up with `\<Yourname>\Spas\Parser\Apib`
 - The `parse` method is supposed to return an array of `ParsedRequest` elements
   where each contains a `ParsedResponse` to have a request/response pair
 - Publish your package on packagist and require it in your toolbox alongside spas to use it

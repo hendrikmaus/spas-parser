@@ -1,6 +1,6 @@
 <?php
 
-namespace Hmaus\SpasParser;
+namespace Hmaus\Spas\Parser;
 
 use Symfony\Component\HttpFoundation\HeaderBag;
 

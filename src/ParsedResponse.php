@@ -3,7 +3,7 @@
  * Parsed response contained within ParsedRequest's
  */
 
-namespace Hmaus\SpasParser;
+namespace Hmaus\Spas\Parser;
 
 use Symfony\Component\HttpFoundation\HeaderBag;
 
@@ -29,7 +29,7 @@ interface ParsedResponse
     public function getStatusCode();
 
     /**
-     * Set HTTP status cide
+     * Set HTTP status code
      * @param int $statusCode
      * @return ParsedResponse
      */
