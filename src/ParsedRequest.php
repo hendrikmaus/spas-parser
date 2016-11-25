@@ -18,6 +18,13 @@ interface ParsedRequest
     public function setName($name);
 
     /**
+     * Set request resource group
+     * @param string $resourceGroup
+     * @return ParsedRequest
+     */
+    public function setResourceGroup($resourceGroup);
+
+    /**
      * Append to the request name
      * @param string $append What you want to append to the name
      * @param string $separator
@@ -31,6 +38,12 @@ interface ParsedRequest
      * @return string
      */
     public function getName();
+
+    /**
+     * Get request group name
+     * @return string
+     */
+    public function getResourceGroup();
 
     /**
      * Set base url, e.g. https://example.com w/o trailing slash
