@@ -23,7 +23,7 @@ interface ParsedRequest
      * @param ApiResourceGroup $resourceGroup
      * @return ParsedRequest
      */
-    public function setResourceGroup($resourceGroup);
+    public function setResourceGroup(ApiResourceGroup $resourceGroup);
 
     /**
      * Append to the request name

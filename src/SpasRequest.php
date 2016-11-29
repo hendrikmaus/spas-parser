@@ -198,7 +198,7 @@ class SpasRequest implements ParsedRequest
         return $this->resourceGroup;
     }
 
-    public function setResourceGroup($resourceGroup)
+    public function setResourceGroup(ApiResourceGroup $resourceGroup)
     {
         $this->resourceGroup = $resourceGroup;
 
