@@ -5,6 +5,7 @@
 
 namespace Hmaus\Spas\Parser;
 
+use Hmaus\Reynaldo\Elements\ApiResourceGroup;
 use Symfony\Component\HttpFoundation\HeaderBag;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
@@ -16,6 +17,13 @@ interface ParsedRequest
      * @return ParsedRequest
      */
     public function setName($name);
+
+    /**
+     * Set request resource group
+     * @param ApiResourceGroup $resourceGroup
+     * @return ParsedRequest
+     */
+    public function setResourceGroup($resourceGroup);
 
     /**
      * Append to the request name
@@ -31,6 +39,12 @@ interface ParsedRequest
      * @return string
      */
     public function getName();
+
+    /**
+     * Get request resource group
+     * @return ApiResourceGroup
+     */
+    public function getResourceGroup();
 
     /**
      * Set base url, e.g. https://example.com w/o trailing slash
