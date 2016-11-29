@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 The change log itself is written the way that [keepachangelog.com](http://keepachangelog.com/) describes.
 
+## [1.1.0] - 2016-11-29
+### Added
+- parsed requests know about their respective api resource group objects
+
 ## [1.0.0] - 2016-10-26
 ### Changed
 - Align namespace with the rest of the code packages
