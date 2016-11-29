@@ -149,4 +149,18 @@ interface ParsedRequest
      * @return ParsedRequest
      */
     public function setParams(ParameterBag $params);
+
+    /**
+     * Get spas (i.e. the processor) related options
+     * No data from the blueprint
+     * @return ParameterBag
+     */
+    public function getProcessorOptions();
+
+    /**
+     * Replace entire processor options
+     * @param ParameterBag $processorOptions
+     * @return ParsedRequest
+     */
+    public function setProcessorOptions(ParameterBag $processorOptions);
 }

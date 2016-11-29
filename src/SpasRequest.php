@@ -20,12 +20,14 @@ class SpasRequest implements ParsedRequest
 
     /**
      * Name of the request, for hook purposes
+     *
      * @var string
      */
     private $name = '';
 
     /**
      * Request resource group
+     *
      * @var ApiResourceGroup
      */
     private $resourceGroup;
@@ -33,6 +35,7 @@ class SpasRequest implements ParsedRequest
     /**
      * Base URL including scheme and port without trailing slash
      * e.g. http://localhost:80
+     *
      * @var string
      */
     private $baseUrl = '';
@@ -44,32 +47,44 @@ class SpasRequest implements ParsedRequest
 
     /**
      * Request body
+     *
      * @var string
      */
     private $content = '';
 
     /**
      * HTTP Request method
+     *
      * @var string
      */
     private $method = '';
 
     /**
      * flag whether or not to test this request
+     *
      * @var bool
      */
     private $enabled = false;
 
     /**
      * Response to this request
+     *
      * @var SpasResponse
      */
     private $response;
 
+    /**
+     * Generic param bag to store options for spas itself and its hooks
+     *
+     * @var ParameterBag
+     */
+    private $processorOptions;
+
     public function __construct()
     {
-        $this->params = new ParameterBag();
-        $this->headers = new HeaderBag();
+        $this->params           = new ParameterBag();
+        $this->headers          = new HeaderBag();
+        $this->processorOptions = new ParameterBag();
     }
 
     public function getBaseUrl()
@@ -175,7 +190,7 @@ class SpasRequest implements ParsedRequest
         if (!$name) {
             $this->setName($append);
         } else {
-            $this->setName($name.$separator.$append);
+            $this->setName($name . $separator . $append);
         }
 
         return $this;
@@ -201,6 +216,18 @@ class SpasRequest implements ParsedRequest
     public function setResourceGroup(ApiResourceGroup $resourceGroup)
     {
         $this->resourceGroup = $resourceGroup;
+
+        return $this;
+    }
+
+    public function getProcessorOptions()
+    {
+        return $this->processorOptions;
+    }
+
+    public function setProcessorOptions(ParameterBag $processorOptions)
+    {
+        $this->processorOptions = $processorOptions;
 
         return $this;
     }
