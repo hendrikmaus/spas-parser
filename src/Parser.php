@@ -13,5 +13,5 @@ interface Parser
      * @param array $apiDescription API Description as raw PHP assoc array
      * @return ParsedRequest[]
      */
-    public function parse(array $apiDescription);
+    public function parse(array $apiDescription) : array;
 }

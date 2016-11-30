@@ -4,6 +4,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 The change log itself is written the way that [keepachangelog.com](http://keepachangelog.com/) describes.
 
+## [2.0.0] - 2016-11-30
+### Changed
+- type hints, so php 7 is now a requirement
+- renamed `ParsedRequest::getResponse` to `ParsedRequest::getExpectedResponse` (setter as well)
+
+### Added
+- actual response is now available on each request via `ParsedRequest::getActualResponse` (setter as well)
+
 ## [1.2.0] - 2016-11-29
 ### Added
 - dedicated param bag on the request object to store processor related options

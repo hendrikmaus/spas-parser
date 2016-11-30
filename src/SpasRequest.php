@@ -67,11 +67,18 @@ class SpasRequest implements ParsedRequest
     private $enabled = false;
 
     /**
-     * Response to this request
+     * Expected response to this request
      *
-     * @var SpasResponse
+     * @var ParsedResponse
      */
-    private $response;
+    private $expectedResponse;
+
+    /**
+     * Actual response to this request
+     *
+     * @var ParsedResponse
+     */
+    private $actualResponse;
 
     /**
      * Generic param bag to store options for spas itself and its hooks
@@ -87,24 +94,24 @@ class SpasRequest implements ParsedRequest
         $this->processorOptions = new ParameterBag();
     }
 
-    public function getBaseUrl()
+    public function getBaseUrl() : string
     {
         return $this->baseUrl;
     }
 
-    public function setBaseUrl($url)
+    public function setBaseUrl(string $url) : ParsedRequest
     {
         $this->baseUrl = $url;
 
         return $this;
     }
 
-    public function getHref()
+    public function getHref() : string
     {
         return $this->href;
     }
 
-    public function setHref($href)
+    public function setHref(string $href) : ParsedRequest
     {
         $this->href = $href;
 
@@ -116,74 +123,74 @@ class SpasRequest implements ParsedRequest
         return $this->content;
     }
 
-    public function setContent($content)
+    public function setContent($content) : ParsedRequest
     {
         $this->content = $content;
 
         return $this;
     }
 
-    public function getMethod()
+    public function getMethod() : string
     {
         return $this->method;
     }
 
-    public function setMethod($method)
+    public function setMethod(string $method) : ParsedRequest
     {
         $this->method = $method;
 
         return $this;
     }
 
-    public function isEnabled()
+    public function isEnabled() : bool
     {
         return $this->enabled;
     }
 
-    public function setEnabled($enabled)
+    public function setEnabled(bool $enabled) : ParsedRequest
     {
         $this->enabled = $enabled;
 
         return $this;
     }
 
-    public function getResponse()
+    public function getExpectedResponse() : ParsedResponse
     {
-        return $this->response;
+        return $this->expectedResponse;
     }
 
-    public function setResponse(ParsedResponse $response)
+    public function setExpectedResponse(ParsedResponse $expectedResponse) : ParsedRequest
     {
-        $this->response = $response;
+        $this->expectedResponse = $expectedResponse;
 
         return $this;
     }
 
-    public function getParams()
+    public function getParams() : ParameterBag
     {
         return $this->params;
     }
 
-    public function setParams(ParameterBag $params)
+    public function setParams(ParameterBag $params) : ParsedRequest
     {
         $this->params = $params;
 
         return $this;
     }
 
-    public function getHeaders()
+    public function getHeaders() : HeaderBag
     {
         return $this->headers;
     }
 
-    public function setHeaders(HeaderBag $headers)
+    public function setHeaders(HeaderBag $headers) : ParsedRequest
     {
         $this->headers = $headers;
 
         return $this;
     }
 
-    public function appendToName($append, $separator = ' > ')
+    public function appendToName(string $append, string $separator = ' > ') : ParsedRequest
     {
         $name = $this->getName();
 
@@ -196,38 +203,50 @@ class SpasRequest implements ParsedRequest
         return $this;
     }
 
-    public function getName()
+    public function getName() : string
     {
         return $this->name;
     }
 
-    public function setName($name)
+    public function setName(string $name) : ParsedRequest
     {
         $this->name = $name;
 
         return $this;
     }
 
-    public function getResourceGroup()
+    public function getResourceGroup() : ApiResourceGroup
     {
         return $this->resourceGroup;
     }
 
-    public function setResourceGroup(ApiResourceGroup $resourceGroup)
+    public function setResourceGroup(ApiResourceGroup $resourceGroup) : ParsedRequest
     {
         $this->resourceGroup = $resourceGroup;
 
         return $this;
     }
 
-    public function getProcessorOptions()
+    public function getProcessorOptions() : ParameterBag
     {
         return $this->processorOptions;
     }
 
-    public function setProcessorOptions(ParameterBag $processorOptions)
+    public function setProcessorOptions(ParameterBag $processorOptions) : ParsedRequest
     {
         $this->processorOptions = $processorOptions;
+
+        return $this;
+    }
+
+    public function getActualResponse()
+    {
+        return $this->actualResponse;
+    }
+
+    public function setActualResponse(ParsedResponse $actualResponse) : ParsedRequest
+    {
+        $this->actualResponse = $actualResponse;
 
         return $this;
     }

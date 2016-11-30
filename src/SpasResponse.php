@@ -33,24 +33,24 @@ class SpasResponse implements ParsedResponse
         $this->headers = new HeaderBag();
     }
 
-    public function getSchema()
+    public function getSchema() : string
     {
         return $this->schema;
     }
 
-    public function setSchema($schema)
+    public function setSchema(string $schema) : ParsedResponse
     {
         $this->schema = $schema;
 
         return $this;
     }
 
-    public function getStatusCode()
+    public function getStatusCode() : int
     {
         return $this->statusCode;
     }
 
-    public function setStatusCode($statusCode)
+    public function setStatusCode(int $statusCode) : ParsedResponse
     {
         $this->statusCode = $statusCode;
 
@@ -69,12 +69,12 @@ class SpasResponse implements ParsedResponse
         return $this;
     }
 
-    public function getHeaders()
+    public function getHeaders() : HeaderBag
     {
         return $this->headers;
     }
 
-    public function setHeaders(HeaderBag $headers)
+    public function setHeaders(HeaderBag $headers) : ParsedResponse
     {
         $this->headers = $headers;
 
