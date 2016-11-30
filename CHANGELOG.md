@@ -10,6 +10,9 @@ The change log itself is written the way that [keepachangelog.com](http://keepac
 - renamed `ParsedRequest::getResponse` to `ParsedRequest::getExpectedResponse` (setter as well)
 
 ### Added
+- request has a dedicated property for the uri template
+
+### Added
 - actual response is now available on each request via `ParsedRequest::getActualResponse` (setter as well)
 
 ## [1.2.0] - 2016-11-29

@@ -46,6 +46,11 @@ class SpasRequest implements ParsedRequest
     private $href = '';
 
     /**
+     * @var string
+     */
+    private $uriTemplate = '';
+
+    /**
      * Request body
      *
      * @var string
@@ -249,5 +254,17 @@ class SpasRequest implements ParsedRequest
         $this->actualResponse = $actualResponse;
 
         return $this;
+    }
+
+    public function setUriTemplate(string $template) : ParsedRequest
+    {
+        $this->uriTemplate = $template;
+
+        return $this;
+    }
+
+    public function getUriTemplate() : string
+    {
+        return $this->uriTemplate;
     }
 }

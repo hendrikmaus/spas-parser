@@ -60,16 +60,32 @@ interface ParsedRequest
 
     /**
      * Set href
+     * In your parser implementation, you do not need to set
+     * this property as spas will set it when expanding the uri template.
+     *
      * @param string $href
      * @return ParsedRequest
      */
     public function setHref(string $href) : ParsedRequest;
 
     /**
-     * Get href, e.g. /example/{param}
+     * Get href, e.g. /example
      * @return string
      */
     public function getHref() : string;
+
+    /**
+     * Set uri template
+     * @param string $template
+     * @return ParsedRequest
+     */
+    public function setUriTemplate(string $template) : ParsedRequest;
+
+    /**
+     * Get uri template, e.g. /example/{param}
+     * @return string
+     */
+    public function getUriTemplate() : string;
 
     /**
      * Set message payload
