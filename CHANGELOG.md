@@ -11,9 +11,11 @@ The change log itself is written the way that [keepachangelog.com](http://keepac
 
 ### Added
 - request has a dedicated property for the uri template
-
-### Added
+- put repetition config on the request object
 - actual response is now available on each request via `ParsedRequest::getActualResponse` (setter as well)
+
+### Removed
+- dedicated param bag on the request object to store processor related options
 
 ## [1.2.0] - 2016-11-29
 ### Added

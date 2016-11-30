@@ -3,6 +3,7 @@
 namespace Hmaus\Spas\Parser;
 
 use Hmaus\Reynaldo\Elements\ApiResourceGroup;
+use Hmaus\Spas\Parser\Options\Repetition;
 use Symfony\Component\HttpFoundation\HeaderBag;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
@@ -86,17 +87,15 @@ class SpasRequest implements ParsedRequest
     private $actualResponse;
 
     /**
-     * Generic param bag to store options for spas itself and its hooks
-     *
-     * @var ParameterBag
+     * @var Repetition
      */
-    private $processorOptions;
+    private $repetition;
 
     public function __construct()
     {
-        $this->params           = new ParameterBag();
-        $this->headers          = new HeaderBag();
-        $this->processorOptions = new ParameterBag();
+        $this->params     = new ParameterBag();
+        $this->headers    = new HeaderBag();
+        $this->repetition = new Repetition();
     }
 
     public function getBaseUrl() : string
@@ -232,18 +231,6 @@ class SpasRequest implements ParsedRequest
         return $this;
     }
 
-    public function getProcessorOptions() : ParameterBag
-    {
-        return $this->processorOptions;
-    }
-
-    public function setProcessorOptions(ParameterBag $processorOptions) : ParsedRequest
-    {
-        $this->processorOptions = $processorOptions;
-
-        return $this;
-    }
-
     public function getActualResponse()
     {
         return $this->actualResponse;
@@ -266,5 +253,17 @@ class SpasRequest implements ParsedRequest
     public function getUriTemplate() : string
     {
         return $this->uriTemplate;
+    }
+
+    public function getRepetitionConfig(): Repetition
+    {
+        return $this->repetition;
+    }
+
+    public function setRepetitionConfig(Repetition $config): ParsedRequest
+    {
+        $this->repetition = $config;
+
+        return $this;
     }
 }

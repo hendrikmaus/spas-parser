@@ -6,6 +6,7 @@
 namespace Hmaus\Spas\Parser;
 
 use Hmaus\Reynaldo\Elements\ApiResourceGroup;
+use Hmaus\Spas\Parser\Options\Repetition;
 use Symfony\Component\HttpFoundation\HeaderBag;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
@@ -166,20 +167,6 @@ interface ParsedRequest
     public function setParams(ParameterBag $params) : ParsedRequest;
 
     /**
-     * Get spas (i.e. the processor) related options
-     * No data from the blueprint
-     * @return ParameterBag
-     */
-    public function getProcessorOptions() : ParameterBag;
-
-    /**
-     * Replace entire processor options
-     * @param ParameterBag $processorOptions
-     * @return ParsedRequest
-     */
-    public function setProcessorOptions(ParameterBag $processorOptions) : ParsedRequest;
-
-    /**
      * Get the actual response
      * todo once php 7.1 is out, use the `?ParsedResponse` syntax for nullable type hints
      * @return ParsedResponse
@@ -192,4 +179,15 @@ interface ParsedRequest
      * @return ParsedRequest
      */
     public function setActualResponse(ParsedResponse $actualResponse) : ParsedRequest;
+
+    /**
+     * @return Repetition
+     */
+    public function getRepetitionConfig() : Repetition;
+
+    /**
+     * @param Repetition $config
+     * @return ParsedRequest
+     */
+    public function setRepetitionConfig(Repetition $config) : ParsedRequest;
 }
