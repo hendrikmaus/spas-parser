@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 The change log itself is written the way that [keepachangelog.com](http://keepachangelog.com/) describes.
 
+## [2.0.1] - 2016-12-02
+### Added
+- commented on Repetition config counters; they start counting at 1
+
 ## [2.0.0] - 2016-11-30
 ### Changed
 - type hints, so php 7 is now a requirement
