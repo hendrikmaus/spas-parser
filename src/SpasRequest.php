@@ -91,6 +91,11 @@ class SpasRequest implements ParsedRequest
      */
     private $repetition;
 
+    /**
+     * @var bool
+     */
+    private $failed = false;
+
     public function __construct()
     {
         $this->params     = new ParameterBag();
@@ -265,5 +270,17 @@ class SpasRequest implements ParsedRequest
         $this->repetition = $config;
 
         return $this;
+    }
+
+    public function setFailed(bool $failed): ParsedRequest
+    {
+        $this->failed = $failed;
+
+        return $this;
+    }
+
+    public function isFailed(): bool
+    {
+        return $this->failed;
     }
 }
