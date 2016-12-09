@@ -197,8 +197,8 @@ interface ParsedRequest
     public function getCustomErrorMessage() : string;
 
     /**
-     * @param String $customErrorMessage
+     * @param string $customErrorMessage
      * @return ParsedRequest
      */
-    public function setCustomErrorMessage(String $customErrorMessage) : ParsedRequest;
+    public function setCustomErrorMessage(string $customErrorMessage) : ParsedRequest;
 }
