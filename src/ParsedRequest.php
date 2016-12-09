@@ -194,7 +194,7 @@ interface ParsedRequest
     /**
      * @return bool
      */
-    public function isFailed() : bool;
+    public function hasFailed() : bool;
 
     /**
      * @param bool $failed

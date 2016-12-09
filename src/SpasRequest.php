@@ -279,7 +279,7 @@ class SpasRequest implements ParsedRequest
         return $this;
     }
 
-    public function isFailed(): bool
+    public function hasFailed(): bool
     {
         return $this->failed;
     }
