@@ -92,6 +92,11 @@ class SpasRequest implements ParsedRequest
     private $repetition;
 
     /**
+     * @var string
+     */
+    private $customErrorMessage = '';
+
+    /**
      * @var bool
      */
     private $failed = false;
@@ -268,6 +273,18 @@ class SpasRequest implements ParsedRequest
     public function setRepetitionConfig(Repetition $config): ParsedRequest
     {
         $this->repetition = $config;
+
+        return $this;
+    }
+
+    public function getCustomErrorMessage(): string
+    {
+        return $this->customErrorMessage;
+    }
+
+    public function setCustomErrorMessage(string $customErrorMessage): ParsedRequest
+    {
+        $this->customErrorMessage = $customErrorMessage;
 
         return $this;
     }

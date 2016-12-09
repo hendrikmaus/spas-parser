@@ -201,4 +201,15 @@ interface ParsedRequest
      * @return ParsedRequest
      */
     public function setFailed(bool $failed) : ParsedRequest;
+
+    /**
+     * @return string
+     */
+    public function getCustomErrorMessage() : string;
+
+    /**
+     * @param string $customErrorMessage
+     * @return ParsedRequest
+     */
+    public function setCustomErrorMessage(string $customErrorMessage) : ParsedRequest;
 }

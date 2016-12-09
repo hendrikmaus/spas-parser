@@ -4,6 +4,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 The change log itself is written the way that [keepachangelog.com](http://keepachangelog.com/) describes.
 
+## [2.1.0] - 2016-12-09
+### Added
+- every request can have a custom error message which can be used to provide
+  a custom error message from wihtin hooks that can tag a request as failed.
+  In spas, there is a validator that will catch "tagged as failed" requests
+  to print this message
+
 ## [2.0.1] - 2016-12-02
 ### Added
 - commented on Repetition config counters; they start counting at 1
