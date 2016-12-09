@@ -190,4 +190,15 @@ interface ParsedRequest
      * @return ParsedRequest
      */
     public function setRepetitionConfig(Repetition $config) : ParsedRequest;
+
+    /**
+     * @return string
+     */
+    public function getCustomErrorMessage() : string;
+
+    /**
+     * @param string $customErrorMessage
+     * @return ParsedRequest
+     */
+    public function setCustomErrorMessage(string $customErrorMessage) : ParsedRequest;
 }
