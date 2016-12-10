@@ -28,6 +28,12 @@ class SpasResponse implements ParsedResponse
      */
     private $body = '';
 
+    /**
+     * Reason phrase associated with the status code.
+     * @var string
+     */
+    private $reasonPhrase = '';
+
     public function __construct()
     {
         $this->headers = new HeaderBag();
@@ -77,6 +83,18 @@ class SpasResponse implements ParsedResponse
     public function setHeaders(HeaderBag $headers) : ParsedResponse
     {
         $this->headers = $headers;
+
+        return $this;
+    }
+
+    public function getReasonPhrase() : string
+    {
+        return $this->reasonPhrase;
+    }
+
+    public function setReasonPhrase(string $reasonPhrase) : ParsedResponse
+    {
+        $this->reasonPhrase = $reasonPhrase;
 
         return $this;
     }

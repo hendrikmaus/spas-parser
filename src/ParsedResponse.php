@@ -60,4 +60,17 @@ interface ParsedResponse
      * @return ParsedResponse
      */
     public function setHeaders(HeaderBag $headers) : ParsedResponse;
+
+    /**
+     * Gets the response reason phrase associated with the status code.
+     * @return string
+     */
+    public function getReasonPhrase() : string;
+
+    /**
+     * Sets the response reason phrase.
+     * @param string $reasonPhrase
+     * @return ParsedResponse
+     */
+    public function setReasonPhrase(string $reasonPhrase) : ParsedResponse;
 }
