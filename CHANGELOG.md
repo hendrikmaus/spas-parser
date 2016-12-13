@@ -4,10 +4,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 The change log itself is written the way that [keepachangelog.com](http://keepachangelog.com/) describes.
 
+## [2.2.0] - 2016-12-13
+### Added
+- parsed response can provide the http reason phrase
+- requests have a `failed` flag
+
 ## [2.1.0] - 2016-12-09
 ### Added
 - every request can have a custom error message which can be used to provide
-  a custom error message from wihtin hooks that can tag a request as failed.
+  a custom error message from within hooks that can tag a request as failed.
   In spas, there is a validator that will catch "tagged as failed" requests
   to print this message
 
