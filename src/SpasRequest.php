@@ -96,6 +96,11 @@ class SpasRequest implements ParsedRequest
      */
     private $customErrorMessage = '';
 
+    /**
+     * @var bool
+     */
+    private $failed = false;
+
     public function __construct()
     {
         $this->params     = new ParameterBag();
@@ -282,5 +287,17 @@ class SpasRequest implements ParsedRequest
         $this->customErrorMessage = $customErrorMessage;
 
         return $this;
+    }
+
+    public function setFailed(bool $failed): ParsedRequest
+    {
+        $this->failed = $failed;
+
+        return $this;
+    }
+
+    public function hasFailed(): bool
+    {
+        return $this->failed;
     }
 }

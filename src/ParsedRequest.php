@@ -192,6 +192,17 @@ interface ParsedRequest
     public function setRepetitionConfig(Repetition $config) : ParsedRequest;
 
     /**
+     * @return bool
+     */
+    public function hasFailed() : bool;
+
+    /**
+     * @param bool $failed
+     * @return ParsedRequest
+     */
+    public function setFailed(bool $failed) : ParsedRequest;
+
+    /**
      * @return string
      */
     public function getCustomErrorMessage() : string;
